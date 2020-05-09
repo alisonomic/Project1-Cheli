@@ -9,28 +9,28 @@
         </title>
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-        <link rel="stylesheet" href="stylesheet/style.css"/>
+        <link rel="stylesheet" href="../stylesheet/style.css"/>
     </head>
 
         <body>
-            <div class="grid-y" style="height: 500px;">
-                <div class="cell small-6 medium-8 large-2">
+            <form>
+                <div class="grid-container">
+                  <div class="grid-x grid-padding-x">
+                    <div class="medium-6 cell">
+                      <label><h3>Recipe Search</h3>
+                        <input type="text" id="recipe-search" placeholder="Enter your Ingredient">
+                      </label>
+                    </div>
+                  </div>
                 </div>
-                <div class="cell small-6 medium-4 large-10 text-center">
-                    <a class="button large" href="HTML/recipes.html">Find Inspiration</a>
-                </div>
-              </div>
-              <div class="cell small-4 medium-2 large-8 text-center">
-                <a class="button large" href="HTML/lists.html">Build Your List</a>
-            </div>
-          </div>
+              </form>
             <!-- The Modal -->
             <div id="myModal" class="modal">
 
             <!-- Modal content -->
             <div class="modal-content text-center">
                 <span class="close">&times;</span>
-                <h3>Welcome to Cheli!!</h3>
+                <h3>Enter an Ingredient in the Search to Find Inspiration</h3>
             </div>
 
             </div>
@@ -38,7 +38,7 @@
             <!-- jQuery JS -->
             <script src="https://code.jquery.com/jquery.js"></script>
             <!-- Code to the JavaScript File -->
-            <script src="scripts/script.js"></script>
+            <script src="../scripts/script.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.38/system.js"></script>
         </body>
 </html>
