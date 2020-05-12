@@ -1,11 +1,6 @@
 $(document).ready(function () {
-// queryURL is the url we'll use to query the API
-      var queryURL = 'https://api.spoonacular.com/recipes/search?apiKey=c70f9ed188cf4e0ea65870aad10a9703&includeNutrition=true';
-      $.get(queryURL, function (response) {
-      console.log(response);
       modal1();
       })
-})
 // Get the modal
 var modal = document.getElementById("myModal");
 

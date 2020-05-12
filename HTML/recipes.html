@@ -7,19 +7,68 @@
         <title>
             Cheli
         </title>
-
+        <!--link to foundation styling-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
         <link rel="stylesheet" href="../stylesheet/style.css"/>
     </head>
-
         <body>
             <form>
                 <div class="grid-container">
                   <div class="grid-x grid-padding-x">
                     <div class="medium-6 cell">
-                      <label><h3>Recipe Search</h3>
-                        <input type="text" id="recipe-search" placeholder="Enter your Ingredient">
+                      <!--adding a dropdown for the recipe search-->
+                      <label for="recipes"><h3>Recipe Search</h3>
+                        <select id="recipe-search">
+                          <option value="african">African</option>
+                          <option value="american">American</option>
+                          <option value="british">British</option>
+                          <option value="cajun">Cajun</option>
+                          <option value="caribbean">Caribbean</option>
+                          <option value="chinese">Chinese</option>
+                          <option value="eastern european">Eastern European</option>
+                          <option value="european">European</option>
+                          <option value="french">French</option>
+                          <option value="german">German</option>
+                          <option value="greek">Greek</option>
+                          <option value="indian">Indian</option>
+                          <option value="irish">Irish</option>
+                          <option value="italian">Italian</option>
+                          <option value="japanese">Japanese</option>
+                          <option value="jewish">Jewish</option>
+                          <option value="korean">Korean</option>
+                          <option value="latin american">Latin American</option>
+                          <option value="mediterranean">Mediterranean</option>
+                          <option value="mexican">Mexican</option>
+                          <option value="middle eastern">Middle Eastern</option>
+                          <option value="nordic">Nordic</option>
+                          <option value="southern">Southern</option>
+                          <option value="spanish">Spanish</option>
+                          <option value="thai">Thai</option>
+                          <option value="vietnamese">Vietnamese</option>
+                        </select>
                       </label>
+                        <button type="button" class="success button" id="searchBTN" style="font-weight: bold;">Search</button>
+                        <!--the output is where the recipes will be displayed-->
+                      <span id="output"></span>
+                      <a href="" id="sourceLink"></a>
+                      <span id="output1"></span>
+                      <a href="" id="sourceLink1"></a>
+                      <span id="output2"></span>
+                      <a href="" id="sourceLink2"></a>
+                      <span id="output3"></span>
+                      <a href="" id="sourceLink3"></a>
+                      <span id="output4"></span>
+                      <a href="" id="sourceLink4"></a>
+                      <span id="output5"></span>
+                      <a href="" id="sourceLink5"></a>
+                      <span id="output6"></span>
+                      <a href="" id="sourceLink6"></a>
+                      <span id="output7"></span>
+                      <a href="" id="sourceLink7"></a>
+                      <span id="output8"></span>
+                      <a href="" id="sourceLink8"></a>
+                      <span id="output9"></span>
+                      <a href="" id="sourceLink9"></a>
                     </div>
                   </div>
                 </div>
@@ -39,6 +88,7 @@
             <script src="https://code.jquery.com/jquery.js"></script>
             <!-- Code to the JavaScript File -->
             <script src="../scripts/script.js"></script>
+            <script src="../scripts/recipes.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.38/system.js"></script>
         </body>
 </html>
