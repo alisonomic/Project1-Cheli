@@ -12,28 +12,30 @@
         <link rel="stylesheet" href="stylesheet/style.css"/>
     </head>
 
-        <body>
-            <div class="grid-y" style="height: 500px;">
-                <div class="cell small-6 medium-8 large-2">
-                </div>
-                <div class="cell small-6 medium-4 large-10 text-center">
-                    <a class="button large" href="HTML/recipes.html">Find Inspiration</a>
-                </div>
-              </div>
-              <div class="cell small-4 medium-2 large-8 text-center">
-                <a class="button large" href="HTML/lists.html">Build Your List</a>
+        <body class="home">
+            <!-- Start to build list-->
+            <div class="container"></div>
+             <div class="cell small-4 medium-2 large-8 text-center">
+                <a class="button large" id ="c-button" href="HTML/lists.html">Lets Build Your List</a>
             </div>
           </div>
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
+         
+ 
 
-            <!-- Modal content -->
-            <div class="modal-content text-center">
-                <span class="close">&times;</span>
-                <h3>Welcome to Cheli!!</h3>
-            </div>
-
-            </div>
+<!-- *************** Modal *************** -->
+<div id="myModal" class="modal fade" 
+role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <button type="button" class="close" onclick="hideModal()">&times;</button>
+        </div>
+        <!-- Modal Body -->
+        <div class="modal-body">
+            <img class="modal-img" src="Assets/cheli.jpg">
+        </div>
+    </div>
+</div>
           
             <!-- jQuery JS -->
             <script src="https://code.jquery.com/jquery.js"></script>
