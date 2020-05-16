@@ -1,48 +1,39 @@
-
 var addBtn = document.querySelector("#add-btn");
-<<<<<<< HEAD
-var itemsListEl = document.querySelector("#items-list");
-var itemsEl = document.querySelector("#item");
-
-var listed = [{ items: "Buy Cheli FLowers ;" }];
-=======
 var itemListEl = document.querySelector("#item-list");
 var nameEl = document.querySelector("#name");
 var modalEl = document.querySelector("#modal-container");
 var modalNameEl = document.querySelector("#modal-name");
 var descriptionEl = document.querySelector("#description");
 var closeEl = document.querySelector(".close");
-var saveBtn = document.querySelector("#save");
+var saveBtn = document.querySelector("#save"); 
+var completeBtn = document.querySelector(".complete")
 
 var item = [{ name: "Bob" }];
->>>>>>> 483d1d37658a9aa7025090723402cf4d89225cc8
-var currentId = 0;
+var currentId = 0; 
+// var completedText = style="text-decoration:line-through;"
 
 function addItemsToList(event) {
   event.preventDefault();
-<<<<<<< HEAD
-  var items = itemsEl.value;
-  var li = document.createElement("li");
-  li.id = listed.length;
-  li.innerHTML = items + " <button>Finished</button>" + "button>Remove</button>", "button>Cheli Search</button>";
-  listed.push({ items: item });
-  itemsListEl.append(li);
-}
-=======
   var items = nameEl.value;
   console.log(items);
   var li = document.createElement("li");
   li.id = item.length;
-  li.innerHTML = items + " <button id=complete>complete</button><button id=delete>delete</button><button id=search>cheli search</button>";
+  li.innerHTML = items + " <button onclick='strikeThrough()' class='complete'>complete</button><button onclick='removeItem()' class='delete'>delete</button><button  class='search'>cheli search</button>";
   item.push({ name: items });
   itemListEl.append(li);
   nameEl.value = "";
-  $(document).on("click", "#complete", function(){
-    document.getElementById("complete").disabled = true;
-  })
-  $(document).on("click", "#delete", function(){
-    $("li").remove();
-  })
+}
+
+function strikeThrough() {
+  let el = document.getElementsByTagName("li");
+  el[3].style.textDecoration = "line-through";
+  // completeBtn.addEventListener("click", strikeIt());
+}
+
+function removeItem() {
+  let el = document.getElementsByTagName("li");
+  el[1].style.display = "none";
+  // completeBtn.addEventListener("click", strikeIt());
 }
 
 function close() {
@@ -51,17 +42,9 @@ function close() {
 
 function handleClick(event) {
   if (event.target.matches("button")) {
-    event.preventDefault();/* 
-    modalEl.style.display = "block";
-    currentId = parseInt(event.target.parentElement.id); */
+    event.preventDefault(); 
     var name = item[currentId].name;
     var description = item[currentId].description;
-   /* modalNameEl.textContent = name;
-    if(description) {
-      descriptionEl.value = description;
-    } else {
-      descriptionEl.value = "";
-    }*/
   }
 }
 
@@ -74,12 +57,6 @@ saveBtn.addEventListener("click", function(event) {
 
 addBtn.addEventListener("click", addItemsToList);
 itemListEl.addEventListener("click", handleClick);
-document.addEventListener("click", function(event) {
-  if (event.target === modalEl) {
-    close();
-  }
-});
-
 
 $(document).ready(function () {
   // queryURL is the url we'll use to query the API
@@ -117,4 +94,3 @@ $(document).ready(function () {
   });
 })
   })
->>>>>>> 483d1d37658a9aa7025090723402cf4d89225cc8
