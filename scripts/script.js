@@ -1,25 +1,17 @@
 $(document).ready(function () {
-      modal1();
-      })
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-function modal1() {
-  modal.style.display = "block";
+  modal1();
+  })
+// Get the Modal
+let modal = document.querySelector("#myModal");
+// Show Modal
+function showModal() {
+modal.classList.remove("hide");
 }
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
+// Hide Modal
+function hideModal() {
+modal.classList.add("hide");
 }
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+// Hide Modal when backdrop (black transparent area) is clicked
+$(window).load(function() {
+$('#myModal').modal('show');
+});

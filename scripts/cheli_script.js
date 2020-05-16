@@ -1,3 +1,4 @@
+
 var addBtn = document.querySelector("#add-btn");
 var itemListEl = document.querySelector("#item-list");
 var nameEl = document.querySelector("#name");
@@ -18,7 +19,7 @@ function addItemsToList(event) {
   console.log(items);
   var li = document.createElement("li");
   li.id = item.length;
-  li.innerHTML = items + " <button onclick='strikeThrough()' class='complete'>complete</button><button onclick='removeItem()' class='delete'>delete</button><button  class='search'>cheli search</button>";
+  li.innerHTML = items + " <button onclick='strikeThrough()' class='complete'>complete</button><button onclick='removeItem()' class='delete'>delete</button><button  id='search'>cheli search</button>";
   item.push({ name: items });
   itemListEl.append(li);
   nameEl.value = "";
@@ -88,7 +89,7 @@ $(document).ready(function () {
           var link = $("<a href='" + resultUrl + "'>" + resultUrl + "</a>");
           resultDiv.append(resultName);
           resultDiv.append(link);
-          $("body").append(resultDiv);
+          $("form").append(resultDiv);
         }
       })
   });
