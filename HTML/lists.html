@@ -9,33 +9,26 @@
         </title>
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-        <link rel="stylesheet" href="../stylesheet/style.css"/>
+        <link rel="stylesheet" href="/style.css"/>
     </head>
 
         <body>
-            <form>
-                <div class="grid-container">
-                  <div class="grid-x grid-padding-x">
-                    <div class="medium-6 cell">
-                      <label><h3>Ingredients Search</h3>
-                        <form>
-                          <div class="input-group">
-                            <input type="text" id="ingredient-search" placeholder="Enter your Ingredient">
-                            <button type="button" class="success button" id="searchBTN" style="font-weight: bold;">Search</button>
-                          </div>
-                        </form>
-                      </label>
-                    </div>
-                  </div>
-                </div>
+            <div class="container">
+              <form>
+                <h1> List items below</h1>
+                <ul id="items-list">
+                  <li id="0">Buy Cheli FLowers ;)<button id="finished">Finished</button><button id="remove-me"> Remove</button><button id="search-nm"> Cheli Search</button></li>
+                </ul>
+                <input placeholder="item" id="item">
+                <button id="add-btn"> Add Item</button>
               </form>
+            </div>
             <!-- The Modal -->
-            <div id="myModal" class="modal">
-
+              <div id="myModal" class="modal">
             <!-- Modal content -->
             <div class="modal-content text-center">
                 <span class="close">&times;</span>
-                <h3>Enter Your Ingredients in the Search to Add Them to the List</h3>
+                <h3>Enter the items that you would like Cheli to manage below.</h3>
             </div>
 
             </div>
@@ -44,8 +37,7 @@
             <script src="https://code.jquery.com/jquery.js"></script>
             <script src="js/foundation.min.js"></script>
             <!-- Code to the JavaScript File -->
-            <script src="../scripts/script.js"></script>
-            <script src="../scripts/ingredients.js"></script>
+            <script src="cheli_script.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.38/system.js"></script>
         </body>
 </html>

@@ -1,5 +1,11 @@
 
 var addBtn = document.querySelector("#add-btn");
+<<<<<<< HEAD
+var itemsListEl = document.querySelector("#items-list");
+var itemsEl = document.querySelector("#item");
+
+var listed = [{ items: "Buy Cheli FLowers ;" }];
+=======
 var itemListEl = document.querySelector("#item-list");
 var nameEl = document.querySelector("#name");
 var modalEl = document.querySelector("#modal-container");
@@ -9,10 +15,20 @@ var closeEl = document.querySelector(".close");
 var saveBtn = document.querySelector("#save");
 
 var item = [{ name: "Bob" }];
+>>>>>>> 483d1d37658a9aa7025090723402cf4d89225cc8
 var currentId = 0;
 
 function addItemsToList(event) {
   event.preventDefault();
+<<<<<<< HEAD
+  var items = itemsEl.value;
+  var li = document.createElement("li");
+  li.id = listed.length;
+  li.innerHTML = items + " <button>Finished</button>" + "button>Remove</button>", "button>Cheli Search</button>";
+  listed.push({ items: item });
+  itemsListEl.append(li);
+}
+=======
   var items = nameEl.value;
   console.log(items);
   var li = document.createElement("li");
@@ -101,3 +117,4 @@ $(document).ready(function () {
   });
 })
   })
+>>>>>>> 483d1d37658a9aa7025090723402cf4d89225cc8
