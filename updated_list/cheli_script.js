@@ -58,3 +58,40 @@ saveBtn.addEventListener("click", function(event) {
 
 addBtn.addEventListener("click", addItemsToList);
 itemListEl.addEventListener("click", handleClick);
+
+$(document).ready(function () {
+  // queryURL is the url we'll use to query the API
+    $(function() {
+      var params = {
+          // Request parameters
+          "q": "ice cream near me",
+          "count": "10",
+          "offset": "0",
+          "mkt": "en-us",
+          "localCategories": "EatDrink",
+      };
+      $(document).on("click", "#search", function(){
+      $.ajax({
+          url: "https://api.cognitive.microsoft.com/bing/v7.0/search?" + $.param(params),
+          beforeSend: function(xhrObj){
+              // Request headers
+              xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","369434a9b765464da90e4eae76487a17");
+          },
+          method: "GET",
+      })
+      .then(function(response){
+        console.log(response)
+        var results = response.webPages.value;
+        for (i = 0; i < results.length; i++){
+          var resultDiv = $("<div>");
+          var resultName = $("<h3>" + response.webPages.value[i].name + "</h3>");
+          var resultUrl = response.webPages.value[i].url;
+          var link = $("<a href='" + resultUrl + "'>" + resultUrl + "</a>");
+          resultDiv.append(resultName);
+          resultDiv.append(link);
+          $("body").append(resultDiv);
+        }
+      })
+  });
+})
+  })
