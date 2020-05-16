@@ -25,7 +25,7 @@ function addItemsToList(event) {
     document.getElementById("complete").disabled = true;
   })
   $(document).on("click", "#delete", function(){
-    $("this").remove();
+    $("li").remove();
   })
 }
 
@@ -70,7 +70,7 @@ $(document).ready(function () {
     $(function() {
       var params = {
           // Request parameters
-          "q": "value",
+          "q": "ice cream near me",
           "count": "10",
           "offset": "0",
           "mkt": "en-us",
