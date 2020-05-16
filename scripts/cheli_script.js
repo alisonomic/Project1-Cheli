@@ -6,7 +6,7 @@ var modalEl = document.querySelector("#modal-container");
 var modalNameEl = document.querySelector("#modal-name");
 var descriptionEl = document.querySelector("#description");
 var closeEl = document.querySelector(".close");
-var saveBtn = document.querySelector("#save"); 
+var saveBtn = document.querySelector("#save");
 
 var item = [{ name: "Bob" }];
 var currentId = 0;
@@ -17,10 +17,16 @@ function addItemsToList(event) {
   console.log(items);
   var li = document.createElement("li");
   li.id = item.length;
-  li.innerHTML = items + " <button>complete</button><button>delete</button><button id=search>cheli search</button>";
+  li.innerHTML = items + " <button id=complete>complete</button><button id=delete>delete</button><button id=search>cheli search</button>";
   item.push({ name: items });
   itemListEl.append(li);
   nameEl.value = "";
+  $(document).on("click", "#complete", function(){
+    document.getElementById("complete").disabled = true;
+  })
+  $(document).on("click", "#delete", function(){
+    $("this").remove();
+  })
 }
 
 function close() {
@@ -64,13 +70,13 @@ $(document).ready(function () {
     $(function() {
       var params = {
           // Request parameters
-          "q": "salt",
+          "q": "value",
           "count": "10",
           "offset": "0",
           "mkt": "en-us",
-          "safesearch": "Moderate",
+          "localCategories": "EatDrink",
       };
-    
+      $(document).on("click", "#search", function(){
       $.ajax({
           url: "https://api.cognitive.microsoft.com/bing/v7.0/search?" + $.param(params),
           beforeSend: function(xhrObj){
@@ -80,17 +86,18 @@ $(document).ready(function () {
           method: "GET",
       })
       .then(function(response){
-        for (var i = 0; i < response.length; i++){
-          var resultDiv = $("<div>");
-          var resultImage = $("<img>");
-          var resultUrl = response.entities.value[i].webSearchUrl;
-          var IMG = response.entities.value[i].image;
-          var link = $("<a href='" + resultUrl + "'>" + resultUrl + "</a>");
-          resultImage.attr("src", IMG);
-          resultDiv.append(resultImage);
-          resultDiv.append(link);
-        }
         console.log(response)
+        var results = response.webPages.value;
+        for (i = 0; i < results.length; i++){
+          var resultDiv = $("<div>");
+          var resultName = $("<h3>" + response.webPages.value[i].name + "</h3>");
+          var resultUrl = response.webPages.value[i].url;
+          var link = $("<a href='" + resultUrl + "'>" + resultUrl + "</a>");
+          resultDiv.append(resultName);
+          resultDiv.append(link);
+          $("body").append(resultDiv);
+        }
       })
   });
+})
   })
