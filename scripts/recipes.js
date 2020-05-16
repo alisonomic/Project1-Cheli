@@ -1,14 +1,14 @@
 $(document).ready(function () {
     // queryURL is the url we'll use to query the API
-          var queryURL = `https://api.spoonacular.com/recipes/random?number=10&apiKey=c70f9ed188cf4e0ea65870aad10a9703&includeNutrition=true`;
+          /* var queryURL = `https://api.spoonacular.com/recipes/random?number=10&apiKey=38a9b2e39d3847979e7df9e6c53bc296&includeNutrition=true`;
           $.get(queryURL, function (response) {
-          console.log(response);
-          })
+          console.log(response); */
+          
     })
       function getRecipeData() {
         var recipe = $("#recipe-search").val();
         //the queryURL is used to search the API randomly for a manually selected cuisine type
-        var queryURL = `https://api.spoonacular.com/recipes/random?number=10&tags=${recipe}&apiKey=c70f9ed188cf4e0ea65870aad10a9703`;
+        var queryURL = `https://api.spoonacular.com/recipes/random?number=10&tags=${recipe}&apiKey=38a9b2e39d3847979e7df9e6c53bc296`;
         $.get(queryURL, function (response) {
           localStorage.setItem("Recipes:", JSON.stringify(recipe));
           //find the name of each of the 10 recipes
@@ -112,39 +112,46 @@ $(document).ready(function () {
             'width': 250
         });
         //add each element to the HTML file
+            var div = 10
+            for (i = 0; i < div; i++){
+                $("#output").html(recipeHead);
+                $("#output").append(recipeIMG);
+                $("#sourceLink").html(recipeSource)
+       /*  }
+            
           $("#output").html(recipeHead);
           $("#output").append(recipeIMG);
           $("#sourceLink").html(recipeSource)
           $("#output1").html(recipeHead1);
           $("#output1").append(recipeIMG1);
-          $("#sourceLink").html(recipeSource1)
+          $("#sourceLink1").html(recipeSource1)
           $("#output2").html(recipeHead2);
           $("#output2").append(recipeIMG2);
-          $("#sourceLink").html(recipeSource2)
+          $("#sourceLink2").html(recipeSource2)
           $("#output3").html(recipeHead3);
           $("#output3").append(recipeIMG3);
-          $("#sourceLink").html(recipeSource3)
+          $("#sourceLink3").html(recipeSource3)
           $("#output4").html(recipeHead4);
           $("#output4").append(recipeIMG4);
-          $("#sourceLink").html(recipeSource4)
+          $("#sourceLink4").html(recipeSource4)
           $("#output5").html(recipeHead5);
           $("#output5").append(recipeIMG5);
-          $("#sourceLink").html(recipeSource5)
+          $("#sourceLink5").html(recipeSource5)
           $("#output6").html(recipeHead6);
           $("#output6").append(recipeIMG6);
-          $("#sourceLink").html(recipeSource6)
+          $("#sourceLink6").html(recipeSource6)
           $("#output7").html(recipeHead7);
           $("#output7").append(recipeIMG7);
-          $("#sourceLink").html(recipeSource7)
+          $("#sourceLink7").html(recipeSource7)
           $("#output8").html(recipeHead8);
           $("#output8").append(recipeIMG8);
-          $("#sourceLink").html(recipeSource8)
+          $("#sourceLink8").html(recipeSource8)
           $("#output9").html(recipeHead9);
           $("#output9").append(recipeIMG9);
-          $("#sourceLink").html(recipeSource9)
+          $("#sourceLink9").html(recipeSource9)
         });
         console.log(queryURL);
-      }
+      } */
     //on click event for the search button
     $("#searchBTN").on("click", function (event) {
       event.preventDefault();
