@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            Cheli
+        </title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+        <link rel="stylesheet" href="/style.css"/>
+    </head>
+
+        <body>
+            <div class="container">
+              <form>
+                <h1> List items below</h1>
+                <ul id="items-list">
+                  <li id="0">Buy Cheli FLowers ;)<button id="finished">Finished</button><button id="remove-me"> Remove</button><button id="search-nm"> Cheli Search</button></li>
+                </ul>
+                <input placeholder="item" id="item">
+                <button id="add-btn"> Add Item</button>
+              </form>
+            </div>
+            <!-- The Modal -->
+              <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content text-center">
+                <span class="close">&times;</span>
+                <h3>Enter the items that you would like Cheli to manage below.</h3>
+            </div>
+
+            </div>
+          
+            <!-- jQuery JS -->
+            <script src="https://code.jquery.com/jquery.js"></script>
+            <script src="js/foundation.min.js"></script>
+            <!-- Code to the JavaScript File -->
+            <script src="cheli_script.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.38/system.js"></script>
+        </body>
+</html>
